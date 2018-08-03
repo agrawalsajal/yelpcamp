@@ -1,0 +1,28 @@
+<% include ../partials/header %>
+
+<div class="container">
+	<div class="jumbotron">
+		<h1>Campgrounds</h1>
+		<p>Every thing that you need to knoe about camps</p>
+		<p><a class="btn btn-lg btn-primary" href="/campgrounds/new">Add more camps</a></p>
+	</div>
+</div>
+
+<div class="container">
+	<div class="row fl_wp">
+		<% camps.forEach(function(camp){ %>
+			<div class="col-xs-12 col-sm-6 col-lg-4">
+				<div class="thumbnail">
+					<img src=" <%= camp.image %> ">
+					<div class="caption">
+						<h2> <%= camp.name %> </h2>
+						<p> <%= camp.description.substr(0,50)%>...</p>
+						<a class="btn btn-primary" href="/campgrounds/<%= camp._id %>">Know more</a>
+					</div>
+				</div>
+			</div> 
+		<% }) %>
+	</div>
+</div>
+
+<% include ../partials/footer %>
