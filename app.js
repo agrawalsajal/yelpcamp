@@ -14,7 +14,6 @@ var express = require("express"),
 	methodOverride = require("method-override"),
 	flash = require("connect-flash");
 
-// mongoose.connect("mongodb://agrawal_sajal:sajal@1234@ds239648.mlab.com:39648/yelp-camp");
 mongoose.connect("mongodb://localhost/yelp_camp");
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static(__dirname+"/public"));
